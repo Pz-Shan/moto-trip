@@ -25,9 +25,9 @@ onMounted(() => {
       <div class="head">
         <div>
           <h1>路书管理</h1>
-          <p>创建、发布、下架和维护路书数据。当前版本先使用 mock 数据展示管理流程。</p>
+          <p>创建、发布、下架和维护路书数据。第一版优先支持 Word、Markdown 和文本智能导入。</p>
         </div>
-        <button type="button">新建路书</button>
+        <RouterLink class="import-button" to="/admin/import">智能导入</RouterLink>
       </div>
 
       <div class="table soft-card">
@@ -38,6 +38,7 @@ onMounted(() => {
           :to="`/admin/trips/${trip.id}`"
         >
           <strong>{{ trip.name }}</strong>
+          <span>{{ trip.importSource === 'document' ? '文档导入' : '手动维护' }}</span>
           <span>{{ trip.status }}</span>
           <span>{{ formatDistance(trip.totalDistance) }}</span>
           <span>{{ trip.updatedAt }}</span>
@@ -70,7 +71,7 @@ p {
   color: var(--muted);
 }
 
-button {
+.import-button {
   padding: 10px 14px;
   border: 0;
   border-radius: 8px;
@@ -85,7 +86,7 @@ button {
 
 .row {
   display: grid;
-  grid-template-columns: minmax(160px, 1fr) 120px 120px 170px;
+  grid-template-columns: minmax(160px, 1fr) 110px 100px 120px 170px;
   gap: 12px;
   padding: 16px;
   border-bottom: 1px solid var(--line);

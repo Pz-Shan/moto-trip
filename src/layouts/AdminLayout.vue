@@ -20,6 +20,7 @@ function logout() {
       </RouterLink>
       <nav>
         <RouterLink to="/admin/trips">路书管理</RouterLink>
+        <RouterLink to="/admin/import">智能导入</RouterLink>
         <RouterLink to="/">查看前台</RouterLink>
       </nav>
       <button type="button" @click="logout">退出后台</button>

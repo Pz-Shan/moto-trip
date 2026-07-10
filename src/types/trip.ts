@@ -13,6 +13,8 @@ export type WaypointType =
 
 export type RangeRisk = 'none' | 'warning' | 'danger'
 
+export type ImportSource = 'manual' | 'document' | 'text' | 'markdown'
+
 export interface VehicleConfig {
   name: string
   fuelTankCapacity?: number
@@ -47,12 +49,34 @@ export interface RouteSegment {
   rangeRisk?: RangeRisk
 }
 
+export interface ScheduleItem {
+  time: string
+  title: string
+  description?: string
+}
+
+export interface ReturnPlan {
+  name: string
+  route: string
+  distance: number
+  duration: number
+  note?: string
+}
+
+export interface ChecklistItem {
+  name: string
+  appliesTo?: string[]
+  required?: boolean
+}
+
 export interface Trip {
   id: string
   name: string
   description: string
   coverImageUrl?: string
   status: TripStatus
+  importSource?: ImportSource
+  importNote?: string
   tags: string[]
   startDate?: string
   endDate?: string
@@ -68,5 +92,10 @@ export interface Trip {
   }
   waypoints: Waypoint[]
   segments: RouteSegment[]
+  schedule?: ScheduleItem[]
+  returnPlans?: ReturnPlan[]
+  checklist?: ChecklistItem[]
+  safetyNotes?: string[]
+  foodNotes?: string[]
   updatedAt: string
 }
