@@ -256,4 +256,37 @@ onBeforeUnmount(() => {
   font-size: 12px;
   white-space: nowrap;
 }
+
+@media (max-width: 720px) {
+  .map-canvas {
+    min-height: 230px;
+  }
+
+  .map-panel {
+    left: 10px;
+    top: 10px;
+    gap: 4px;
+    max-width: calc(100% - 20px);
+    padding: 9px 10px;
+    border-radius: 6px;
+  }
+
+  .map-panel strong {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .map-panel span {
+    font-size: 11px;
+  }
+
+  .map-points {
+    display: none;
+  }
+
+  :global(.amap-route-label) {
+    padding: 3px 6px;
+    font-size: 11px;
+  }
+}
 </style>

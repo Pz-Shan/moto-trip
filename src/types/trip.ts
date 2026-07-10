@@ -24,6 +24,15 @@ export interface VehicleConfig {
   warningRange: number
 }
 
+export interface FleetVehicle extends VehicleConfig {
+  id: string
+  role?: string
+  model?: string
+  displacement?: string
+  riderCount?: number
+  note?: string
+}
+
 export interface Waypoint {
   id: string
   name: string
@@ -81,6 +90,7 @@ export interface Trip {
   startDate?: string
   endDate?: string
   vehicle: VehicleConfig
+  fleetVehicles?: FleetVehicle[]
   totalDistance: number
   estimatedDuration: number
   rangeRisk: RangeRisk

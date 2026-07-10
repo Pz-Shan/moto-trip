@@ -91,4 +91,45 @@ p {
   color: var(--muted);
   font-size: 13px;
 }
+
+@media (max-width: 720px) {
+  .waypoint-list {
+    gap: 10px;
+  }
+
+  .waypoint {
+    grid-template-columns: 28px 1fr;
+    gap: 10px;
+  }
+
+  .order {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .body {
+    gap: 6px;
+    padding-bottom: 12px;
+  }
+
+  .head {
+    align-items: flex-start;
+  }
+
+  .head strong {
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .meta {
+    gap: 6px 12px;
+    font-size: 12px;
+  }
+}
 </style>

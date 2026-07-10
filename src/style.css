@@ -93,6 +93,11 @@ a {
 
 @media (max-width: 720px) {
   .page-shell {
-    width: min(100% - 24px, 1180px);
+    width: min(100% - 20px, 1180px);
+  }
+
+  .soft-card {
+    border-radius: 6px;
+    box-shadow: 0 10px 28px rgba(44, 42, 36, 0.1);
   }
 }

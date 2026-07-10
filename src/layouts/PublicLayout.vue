@@ -74,4 +74,37 @@ import { RouterLink } from 'vue-router'
   color: var(--green-dark);
   background: rgba(255, 255, 255, 0.56);
 }
+
+@media (max-width: 720px) {
+  .public-layout {
+    padding-bottom: 28px;
+  }
+
+  .topbar {
+    padding: 10px 12px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .brand strong {
+    font-size: 15px;
+    line-height: 1.1;
+  }
+
+  .brand small {
+    font-size: 11px;
+  }
+
+  .admin-link {
+    display: none;
+  }
+}
 </style>
